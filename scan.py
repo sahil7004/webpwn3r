@@ -8,7 +8,8 @@ import urllib
 from headers import *
 from vulnz import *
 
-print (ga.green+''')
+import sys
+print ga.green+'''
 	    __          __  _     _____                 ____       
 	    \ \        / / | |   |  __ \               |___ \      
 	     \ \  /\  / /__| |__ | |__) |_      ___ __   __) |_ __ 
