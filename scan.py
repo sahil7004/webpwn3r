@@ -46,6 +46,12 @@ def urls_or_list():
 	if url_or_list =="2":
 		 urls_list = raw_input( ga.green+" [!] Enter the list file name .e.g [list.txt]: "+ga.end)
 		 open_list = open(urls_list).readlines()
+                 try:
+		 	open_list = open(urls_list).readlines() #exception for reading lists file
+		 except Exception,err:
+		 	print(ga.red+" [Error]:Error Reading File")
+		 	sys.exit(0)
+
 		 for line in open_list:
 			 if "?" in line:
 			 	links = line.strip()
@@ -59,7 +65,10 @@ def urls_or_list():
 		  	 	url = links
 				print ga.red +"\n [Warning] "+ ga.end + ga.bold+"%s"%url +ga.end + ga.red +" is not a valid URL"+ga.end				
 				print ga.red +" [Warning] You should write a Full URL .e.g http://site.com/page.php?id=value \n"+ ga.end
-		 exit()				
+		 exit()	
+			        exit()
+	else:
+		print ga.red+"\n [Error] Invalid Choice" #for invalid choices
 
 urls_or_list()
 
